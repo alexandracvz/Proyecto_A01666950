@@ -1,1 +1,38 @@
-// Crear el archivo header de la clase Personaje, no olvides las guardas o el pragma.
+#ifndef PERSONAJE_HPP
+#define PERSONAJE_HPP
+
+class Personaje {
+
+private:
+    int vida;
+    int salud;
+    int ataque;
+    int nivel;
+
+public:
+    // Constructores
+    Personaje();
+    Personaje(int vida, int ataque, int nivel);
+
+    // Getters
+    int getVida();
+    int getSalud();
+    int getAtaque();
+    int getNivel();
+
+    // Setters
+    void setVida(int vida);
+    void setSalud(int salud);
+    void setAtaque(int ataque);
+    void setNivel(int nivel);
+
+    // Métodos
+    int porcentajeSalud();
+    void imprimeBarra();
+    int calculaAtaque(Personaje& objetivo);
+    void recibeAtaque(int ptosAtaque);
+    void atacar(Personaje& objetivo);
+    void imprimir();
+};
+
+#endif
