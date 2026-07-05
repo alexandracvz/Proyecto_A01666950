@@ -1,26 +1,39 @@
-# Construcción - Comandos básicos
+# Proyecto A01666950
 
-Los comandos siguientes funcionan en un entorno de programación Linux para la compilación y ejecución de cualquier `assignment`, deben ejecutarse dentro de la carpeta del proyecto.
+## Clase Personaje
 
-### Compile+Run commands
-```
-make
-```
-### Compile command
-```
-make compile
-```
-### Run command
-```
-make run
+Este proyecto implementa una clase **Personaje** que representa una unidad de combate. La clase cuenta con atributos para la vida, salud, ataque y nivel, además de métodos para calcular ataques, recibir daño y mostrar el estado del personaje.
+
+## Diagrama UML
+```mermaid
+classDiagram
+
+class Personaje{
+    - int vida
+    - int salud
+    - int ataque
+    - int nivel
+
+    + Personaje()
+    + Personaje(int vida, int ataque, int nivel)
+
+    + getVida() int
+    + getSalud() int
+    + getAtaque() int
+    + getNivel() int
+
+    + setVida(int vida) void
+    + setSalud(int salud) void
+    + setAtaque(int ataque) void
+    + setNivel(int nivel) void
+
+    + porcentajeSalud() int
+    + imprimeBarra() void
+    + calculaAtaque(Personaje& objetivo) int
+    + recibeAtaque(int ptosAtaque) void
+    + atacar(Personaje& objetivo) void
+    + imprimir() void
+}
 ```
 
-### Clean command
-```
-make clean
-```
-### Debug command
-```
-make debug
-```
-Mini-tutorial : https://u.osu.edu/cstutorials/2018/09/28/how-to-debug-c-program-using-gdb-in-6-simple-steps/
+
