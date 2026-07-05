@@ -110,3 +110,25 @@ int Personaje::calculaAtaque(Personaje& objetivo) {
     return mitad + rand() % (ataque - mitad + 1);
 
 }
+//ataque a otro personaje
+
+void Personaje::atacar(Personaje& objetivo) {
+
+    int dano = calculaAtaque(objetivo);
+
+    objetivo.recibeAtaque(dano);
+
+}
+
+void Personaje::imprimir() {
+
+    cout << "Vida maxima: " << vida << endl;
+    cout << "Salud actual: " << salud << endl;
+    cout << "Ataque: " << ataque << endl;
+    cout << "Nivel: " << nivel << endl;
+
+    cout << "Salud: ";
+    imprimeBarra();
+    cout << " (" << porcentajeSalud() << "%)" << endl;
+
+}
