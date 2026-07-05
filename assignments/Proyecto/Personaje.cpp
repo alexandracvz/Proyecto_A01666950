@@ -52,3 +52,61 @@ void Personaje::setAtaque(int ataque) {
 void Personaje::setNivel(int nivel) {
     this->nivel = nivel;
 }
+
+int Personaje::porcentajeSalud() {
+
+    return (salud * 100) / vida;
+
+}
+
+//barras
+
+void Personaje::imprimeBarra() {
+
+    int porcentaje = porcentajeSalud();
+
+    int llenos = porcentaje / 5;
+
+    for(int i = 0; i < llenos; i++) {
+
+        cout << "#";
+
+    }
+
+    for(int i = llenos; i < 20; i++) {
+
+        cout << "-";
+
+    }
+
+}
+
+// ataque 
+
+void Personaje::recibeAtaque(int ptosAtaque) {
+
+    salud = salud - ptosAtaque;
+
+    if(salud < 0) {
+
+        salud = 0;
+
+    }
+
+}
+
+//calcular atque
+
+int Personaje::calculaAtaque(Personaje& objetivo) {
+
+    int mitad = ataque / 2;
+
+    if(objetivo.getNivel() > nivel) {
+
+        return 1 + rand() % mitad;
+
+    }
+
+    return mitad + rand() % (ataque - mitad + 1);
+
+}
