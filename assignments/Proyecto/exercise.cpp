@@ -40,4 +40,22 @@ int main(){
 
     mago.imprimir();
 
+    cout<<"\nGUERRERO ATACA AL MAGO\n";
+
+    guerrero.atacar(mago);
+
+    mago.imprimir();
+
+    cout<<"\nARQUERO ATACA AL GUERRERO\n";
+
+    arquero.atacar(guerrero);
+
+    guerrero.imprimir();
+
+    cout<<"\nMAGO ATACA AL ARQUERO\n";
+
+    mago.atacar(arquero);
+
+    arquero.imprimir();
+
 }
