@@ -32,7 +32,7 @@ public:
     int porcentajeSalud();
     void imprimeBarra();
     virtual int calculaAtaque(Personaje& objetivo);
-    void recibeAtaque(int ptosAtaque);
+    virtual void recibeAtaque(int ptosAtaque);
     void atacar(Personaje& objetivo);
     virtual void imprimir();
 
