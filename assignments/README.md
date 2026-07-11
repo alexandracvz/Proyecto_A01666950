@@ -34,7 +34,7 @@ class Personaje{
     + atacar(Personaje& objetivo) void
     + imprimir() void
 }
-```
+
 Personaje <|-- Guerrero
 Personaje <|-- Arquero
 Personaje <|-- Mago
