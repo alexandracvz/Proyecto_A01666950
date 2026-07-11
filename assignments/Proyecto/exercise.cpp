@@ -1,30 +1,43 @@
 #include <iostream>
-#include "Personaje.hpp"
+#include "Guerrero.hpp"
+#include "Arquero.hpp"
+#include "Mago.hpp"
 
 using namespace std;
 
-int main() {
+int main(){
 
-    Personaje personaje1(100, 20, 2);
-    Personaje personaje2(120, 25, 3);
+    Guerrero guerrero(120,25,3,30);
 
-    cout << "===== PERSONAJE 1 =====" << endl;
-    personaje1.imprimir();
+    Arquero arquero(100,22,2,40);
 
-    cout << endl;
+    Mago mago(90,28,3,100);
 
-    cout << "===== PERSONAJE 2 =====" << endl;
-    personaje2.imprimir();
+    cout<<"===== GUERRERO ====="<<endl;
+    guerrero.imprimir();
 
-    cout << endl;
+    cout<<"\n===== ARQUERO ====="<<endl;
+    arquero.imprimir();
 
-    cout << "El personaje 1 ataca al personaje 2." << endl;
-    personaje1.atacar(personaje2);
+    cout<<"\n===== MAGO ====="<<endl;
+    mago.imprimir();
 
-    cout << endl;
+    cout<<"\nMAGO ATACA AL GUERRERO\n";
 
-    cout << "===== PERSONAJE 2 DESPUES DEL ATAQUE =====" << endl;
-    personaje2.imprimir();
+    mago.atacar(guerrero);
 
-    return 0;
+    guerrero.imprimir();
+
+    cout<<"\nGUERRERO ATACA AL ARQUERO\n";
+
+    guerrero.atacar(arquero);
+
+    arquero.imprimir();
+
+    cout<<"\nARQUERO ATACA AL MAGO\n";
+
+    arquero.atacar(mago);
+
+    mago.imprimir();
+
 }
