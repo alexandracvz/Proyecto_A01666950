@@ -14,6 +14,8 @@ public:
     Personaje();
     Personaje(int vida, int ataque, int nivel);
 
+    virtual ~Personaje() {}
+
     // Getters
     int getVida();
     int getSalud();
@@ -29,10 +31,11 @@ public:
     // Métodos
     int porcentajeSalud();
     void imprimeBarra();
-    int calculaAtaque(Personaje& objetivo);
+    virtual int calculaAtaque(Personaje& objetivo);
     void recibeAtaque(int ptosAtaque);
     void atacar(Personaje& objetivo);
-    void imprimir();
+    virtual void imprimir();
+
 };
 
 #endif
