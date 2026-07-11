@@ -1,0 +1,57 @@
+#include "Mago.hpp"
+#include <iostream>
+
+using namespace std;
+
+Mago::Mago() : Personaje() {
+
+    mana = 100;
+
+}
+
+Mago::Mago(int vida, int ataque, int nivel, int mana)
+: Personaje(vida, ataque, nivel) {
+
+    this->mana = mana;
+
+}
+
+int Mago::calculaAtaque(Personaje& objetivo) {
+
+    int dano = Personaje::calculaAtaque(objetivo);
+
+    if(mana >= 20){
+
+        dano = dano + 10;
+        mana = mana - 20;
+
+    }
+
+    return dano;
+
+}
+
+void Mago::recibeAtaque(int ptosAtaque) {
+
+    if(mana >= 80){
+
+        ptosAtaque = ptosAtaque / 2;
+
+    }
+    else if(mana >= 50){
+
+        ptosAtaque = ptosAtaque * 3 / 4;
+
+    }
+
+    Personaje::recibeAtaque(ptosAtaque);
+
+}
+
+void Mago::imprimir() {
+
+    Personaje::imprimir();
+
+    cout << "Mana: " << mana << endl;
+
+}
