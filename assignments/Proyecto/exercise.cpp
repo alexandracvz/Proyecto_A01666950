@@ -71,6 +71,13 @@ int main() {
 
     personajes[2]->imprimir();
 
+    cout << "\nGUERRERO REMATA AL MAGO SIN MANA\n";
+
+    personajes[2]->setSalud(5);
+    personajes[0]->atacar(*personajes[2]);
+
+    personajes[2]->imprimir();
+
     // ===== PRUEBA DE OPERADOR<< =====
     cout << "\n===== PRUEBA DE OPERADOR<< =====\n";
     cout << *personajes[0];
