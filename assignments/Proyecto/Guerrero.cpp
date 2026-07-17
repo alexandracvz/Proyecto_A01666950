@@ -35,8 +35,8 @@ void Guerrero::recibeAtaque(int ptosAtaque) {
 
     Personaje::recibeAtaque(ptosAtaque);
 
-    if (getVida() <=0) {
-        setVida(0);
+    if (getSalud() <=0 ) {
+        
         revive();
     }
 }
