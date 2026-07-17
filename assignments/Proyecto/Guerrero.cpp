@@ -43,3 +43,27 @@ void Guerrero::imprimir() {
 
     cout << "Fuerza: " << fuerza << endl;
 }
+
+// Implementar revivir
+
+void Guerrero::revive(){
+
+    if(getVida() <= 0){
+
+        if(fuerza >= 40){
+
+            setVida(40);
+            fuerza -= 40;
+
+            cout << "El guerrero revivio usando su super fuerza.\n";
+
+        }
+        else{
+
+            cout << "El guerrero ha muerto.\n";
+
+        }
+
+    }
+
+}

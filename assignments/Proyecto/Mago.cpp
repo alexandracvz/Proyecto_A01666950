@@ -55,3 +55,25 @@ void Mago::imprimir() {
     cout << "Mana: " << mana << endl;
 
 }
+
+void Mago::revive(){
+
+    if(getVida() <= 0){
+
+        if(mana >= 40){
+
+            setVida(40);
+            mana -= 40;
+
+            cout << "Mago revivio usando su mana.\n";
+
+        }
+        else{
+
+            cout << "Mago ha muerto.\n";
+
+        }
+
+    }
+
+}
