@@ -37,6 +37,8 @@ public:
     virtual void revive() = 0;
     virtual void imprimir();
 
+    int operator+(const Personaje& otro);
+
 };
 
 #endif
