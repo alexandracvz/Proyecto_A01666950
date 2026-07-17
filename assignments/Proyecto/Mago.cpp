@@ -63,7 +63,7 @@ void Mago::imprimir() {
 
 void Mago::revive(){
 
-    if(getVida() <= 0){
+    if(getSalud() <= 0){
 
         if(mana >= 40){
 

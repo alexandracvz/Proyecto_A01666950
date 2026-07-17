@@ -1,5 +1,6 @@
 #ifndef PERSONAJE_HPP
 #define PERSONAJE_HPP
+#include <iostream>
 
 class Personaje {
 
@@ -40,5 +41,7 @@ public:
     int operator+(const Personaje& otro);
 
 };
+
+ostream& operator<<(ostream& os, Personaje& p);   
 
 #endif

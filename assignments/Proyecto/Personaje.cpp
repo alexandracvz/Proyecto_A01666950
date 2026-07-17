@@ -132,3 +132,8 @@ void Personaje::imprimir() {
     cout << " (" << porcentajeSalud() << "%)" << endl;
 
 }
+
+ostream& operator<<(ostream& os, Personaje& p) {
+    p.imprimir();
+    return os;
+}

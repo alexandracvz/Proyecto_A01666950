@@ -68,8 +68,8 @@ int main() {
 
     personajes[1]->imprimir();
 
-    // Aquí se prueba la sobrecarga del operador <<
-    // cout << *personajes[0];
+    cout << "\n===== PRUEBA DE OPERADOR<< =====\n";
+    cout << *personajes[0];
 
     // Liberar memoria
     for (Personaje* p : personajes) {
