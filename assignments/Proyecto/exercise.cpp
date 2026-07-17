@@ -64,6 +64,13 @@ int main() {
 
     personajes[2]->imprimir();
 
+    cout << "\nGUERRERO LE DA EL GOLPE FINAL AL MAGO\n";
+
+    personajes[2]->setSalud(5);
+    personajes[0]->atacar(*personajes[2]);
+
+    personajes[2]->imprimir();
+
     //termina la prueba de revive
 
 
