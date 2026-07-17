@@ -3,7 +3,6 @@
 #include "Arquero.hpp"
 #include "Mago.hpp"
 #include <vector>
-
 using namespace std;
 
 int main() {
@@ -26,30 +25,31 @@ int main() {
 
     }
 
-    // Peleas
-    cout << "\nMAGO ATACA AL GUERRERO\n";
+    // ===== PELEAS =====
+    cout << "\n===== PELEAS =====\n";
 
-    personajes[2]->atacar(*personajes[0]);
+    for (int i = 0; i < (int)personajes.size(); i++) {
 
-    personajes[0]->imprimir();
+        int objetivo = (i + 1) % personajes.size();
 
+        cout << "\nPersonaje " << i << " ataca a personaje " << objetivo << "\n";
 
-    cout << "\nGUERRERO ATACA AL ARQUERO\n";
+        personajes[i]->atacar(*personajes[objetivo]);
 
-    personajes[0]->atacar(*personajes[1]);
+        personajes[objetivo]->imprimir();
 
-    personajes[1]->imprimir();
+    }
 
+    // ===== prueba de revive() =====
+    cout << "\n===== PRUEBA DE REVIVE (MAGO) =====\n";
 
     cout << "\nARQUERO ATACA AL MAGO\n";
 
-    personajes[2]->setSalud(5);   // <--fuerza salud baja para probar revive
-
+    personajes[2]->setSalud(5);
     personajes[1]->atacar(*personajes[2]);
 
     personajes[2]->imprimir();
 
-    //Parte de la prueba
     cout << "\nARQUERO REMATA AL MAGO OTRA VEZ\n";
 
     personajes[2]->setSalud(5);
@@ -71,29 +71,7 @@ int main() {
 
     personajes[2]->imprimir();
 
-    //termina la prueba de revive
-
-
-    cout << "\nGUERRERO ATACA AL MAGO\n";
-
-    personajes[0]->atacar(*personajes[2]);
-
-    personajes[2]->imprimir();
-
-
-    cout << "\nARQUERO ATACA AL GUERRERO\n";
-
-    personajes[1]->atacar(*personajes[0]);
-
-    personajes[0]->imprimir();
-
-
-    cout << "\nMAGO ATACA AL ARQUERO\n";
-
-    personajes[2]->atacar(*personajes[1]);
-
-    personajes[1]->imprimir();
-
+    // ===== PRUEBA DE OPERADOR<< =====
     cout << "\n===== PRUEBA DE OPERADOR<< =====\n";
     cout << *personajes[0];
 
