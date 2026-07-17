@@ -34,6 +34,7 @@ public:
     virtual int calculaAtaque(Personaje& objetivo);
     virtual void recibeAtaque(int ptosAtaque);
     void atacar(Personaje& objetivo);
+    virtual void revive() = 0;
     virtual void imprimir();
 
 };

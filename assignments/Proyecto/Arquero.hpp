@@ -17,6 +17,8 @@ public:
 
     void recibeAtaque(int ptosAtaque);
 
+    void revive() override;
+
     void imprimir() override;
 
 };
