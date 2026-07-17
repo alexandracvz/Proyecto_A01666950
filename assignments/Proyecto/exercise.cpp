@@ -43,6 +43,16 @@ int main() {
 
     cout << "\nARQUERO ATACA AL MAGO\n";
 
+    personajes[2]->setSalud(5);   // <--fuerza salud baja para probar revive
+
+    personajes[1]->atacar(*personajes[2]);
+
+    personajes[2]->imprimir();
+
+    //Parte de la prueba
+    cout << "\nARQUERO REMATA AL MAGO OTRA VEZ\n";
+
+    personajes[2]->setSalud(5);
     personajes[1]->atacar(*personajes[2]);
 
     personajes[2]->imprimir();
