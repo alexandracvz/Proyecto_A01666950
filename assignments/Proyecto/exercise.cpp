@@ -2,60 +2,81 @@
 #include "Guerrero.hpp"
 #include "Arquero.hpp"
 #include "Mago.hpp"
+#include <vector>
 
 using namespace std;
 
-int main(){
+int main() {
 
-    Guerrero guerrero(120,25,3,30);
+    // Vector de apuntadores a Personaje
+    vector<Personaje*> personajes;
 
-    Arquero arquero(100,22,2,40);
+    // Crear los personajes 
+    personajes.push_back(new Guerrero(120,25,3,30));
+    personajes.push_back(new Arquero(100,22,2,40));
+    personajes.push_back(new Mago(90,28,3,100));
 
-    Mago mago(90,28,3,100);
+    //imprimir los personajes
+    cout << "===== PERSONAJES =====" << endl;
 
-    cout<<"===== GUERRERO ====="<<endl;
-    guerrero.imprimir();
+    for (Personaje* p : personajes) {
 
-    cout<<"\n===== ARQUERO ====="<<endl;
-    arquero.imprimir();
+        p->imprimir();
+        cout << endl;
 
-    cout<<"\n===== MAGO ====="<<endl;
-    mago.imprimir();
+    }
 
-    cout<<"\nMAGO ATACA AL GUERRERO\n";
+    // Peleas
+    cout << "\nMAGO ATACA AL GUERRERO\n";
 
-    mago.atacar(guerrero);
+    personajes[2]->atacar(*personajes[0]);
 
-    guerrero.imprimir();
+    personajes[0]->imprimir();
 
-    cout<<"\nGUERRERO ATACA AL ARQUERO\n";
 
-    guerrero.atacar(arquero);
+    cout << "\nGUERRERO ATACA AL ARQUERO\n";
 
-    arquero.imprimir();
+    personajes[0]->atacar(*personajes[1]);
 
-    cout<<"\nARQUERO ATACA AL MAGO\n";
+    personajes[1]->imprimir();
 
-    arquero.atacar(mago);
 
-    mago.imprimir();
+    cout << "\nARQUERO ATACA AL MAGO\n";
 
-    cout<<"\nGUERRERO ATACA AL MAGO\n";
+    personajes[1]->atacar(*personajes[2]);
 
-    guerrero.atacar(mago);
+    personajes[2]->imprimir();
 
-    mago.imprimir();
 
-    cout<<"\nARQUERO ATACA AL GUERRERO\n";
+    cout << "\nGUERRERO ATACA AL MAGO\n";
 
-    arquero.atacar(guerrero);
+    personajes[0]->atacar(*personajes[2]);
 
-    guerrero.imprimir();
+    personajes[2]->imprimir();
 
-    cout<<"\nMAGO ATACA AL ARQUERO\n";
 
-    mago.atacar(arquero);
+    cout << "\nARQUERO ATACA AL GUERRERO\n";
 
-    arquero.imprimir();
+    personajes[1]->atacar(*personajes[0]);
 
+    personajes[0]->imprimir();
+
+
+    cout << "\nMAGO ATACA AL ARQUERO\n";
+
+    personajes[2]->atacar(*personajes[1]);
+
+    personajes[1]->imprimir();
+
+    // Aquí se prueba la sobrecarga del operador <<
+    // cout << *personajes[0];
+
+    // Liberar memoria
+    for (Personaje* p : personajes) {
+
+        delete p;
+
+    }
+
+    return 0;
 }
