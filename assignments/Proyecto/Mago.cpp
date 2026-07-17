@@ -67,7 +67,7 @@ void Mago::revive(){
 
         if(mana >= 40){
 
-            setVida(40);
+            setSalud(40);
             mana -= 40;
 
             cout << "Mago revivio usando su mana.\n";

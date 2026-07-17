@@ -51,3 +51,22 @@ void Arquero::imprimir() {
     cout << "Precision: " << precision << "%" << endl;
 
 }
+
+void Arquero::revive() {
+
+    if (precision >= 50) {
+
+        setSalud(30);
+        precision -= 50;
+
+        cout << "El arquero revivio gracias a su super precision." << endl;
+
+    }
+    else {
+
+        cout << "Arquero ha muerto." << endl;
+
+    }
+
+}
+

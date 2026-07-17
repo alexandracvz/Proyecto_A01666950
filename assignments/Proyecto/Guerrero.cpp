@@ -57,7 +57,7 @@ void Guerrero::revive(){
 
         if(fuerza >= 40){
 
-            setVida(40);
+            setSalud(40);
             fuerza -= 40;
 
             cout << "El guerrero revivio usando su super fuerza.\n";

@@ -15,7 +15,7 @@ public:
 
     int calculaAtaque(Personaje& objetivo) override;
 
-    void recibeAtaque(int ptosAtaque);
+    void recibeAtaque(int ptosAtaque) override;
 
     void revive() override;
 
@@ -23,26 +23,5 @@ public:
 
 };
 
-void Arquero::revive(){
-
-    if(getVida() <= 0){
-
-        if(precision >= 40){
-
-            setVida(40);
-            precision -= 40;
-
-            cout << "El arquero revivio gracias a su precisión.\n";
-
-        }
-        else{
-
-            cout << "El aruqero ha muerto.\n";
-
-        }
-
-    }
-
-}
 
 #endif
