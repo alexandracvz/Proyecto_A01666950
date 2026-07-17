@@ -1,6 +1,7 @@
 #ifndef PERSONAJE_HPP
 #define PERSONAJE_HPP
 #include <iostream>
+using namespace std;
 
 class Personaje {
 
