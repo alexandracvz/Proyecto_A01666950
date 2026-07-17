@@ -46,6 +46,11 @@ void Mago::recibeAtaque(int ptosAtaque) {
 
     Personaje::recibeAtaque(ptosAtaque);
 
+    if (getVida() <=0) {
+        setVida(0);
+        revive();
+    }
+
 }
 
 void Mago::imprimir() {

@@ -34,6 +34,11 @@ void Guerrero::recibeAtaque(int ptosAtaque) {
     }
 
     Personaje::recibeAtaque(ptosAtaque);
+
+    if (getVida() <=0) {
+        setVida(0);
+        revive();
+    }
 }
 
 // Imprime la información
