@@ -88,7 +88,7 @@ void mostrarEjercito(const vector<Personaje*>& ejercito,
 
         cout << "\n----- Combatiente " << i + 1 << " -----\n";
 
-        ejercito[i]->imprimir();
+        cout << *ejercito[i];
     }
 }
 
@@ -121,8 +121,7 @@ void batalla(vector<Personaje*>& ejercito1,
     cout << "           COMIENZA LA BATALLA\n";
     cout << "========================================\n";
 
-    // Cada combatiente se enfrenta al combatiente actual
-    // del ejercito contrario hasta que uno sea derrotado.
+    // Cada combatiente se enfrenta al combatiente actual del ejercito contrario hasta que uno sea derrotado.
     while (indice1 < ejercito1.size() &&
            indice2 < ejercito2.size()) {
 
@@ -147,8 +146,7 @@ void batalla(vector<Personaje*>& ejercito1,
         cout << "\nEjercito 2:\n";
         combatiente2->imprimir();
 
-        // Los dos personajes se atacan por turnos
-        // hasta que uno sea derrotado.
+        // Los dos personajes se atacan por turnos hasta que uno sea derrotado.
         while (combatiente1->getSalud() > 0 &&
                combatiente2->getSalud() > 0) {
 
@@ -175,8 +173,7 @@ void batalla(vector<Personaje*>& ejercito1,
             cout << "\nEstado actual:\n";
             combatiente2->imprimir();
 
-            // Si el combatiente del Ejercito 2 sigue vivo,
-            // realiza su ataque.
+            // Si el combatiente del Ejercito 2 sigue vivo, realiza su ataque.
             if (combatiente2->getSalud() > 0) {
 
                 dano = combatiente2->calculaAtaque(*combatiente1);
@@ -203,8 +200,7 @@ void batalla(vector<Personaje*>& ejercito1,
             }
         }
 
-        // Si el primer combatiente fue derrotado,
-        // avanza al siguiente personaje del Ejercito 1.
+        // Si el primer combatiente fue derrotado, avanza al siguiente personaje del Ejercito 1.
         if (combatiente1->getSalud() <= 0) {
 
             cout << "\n"
@@ -214,8 +210,7 @@ void batalla(vector<Personaje*>& ejercito1,
             indice1++;
         }
 
-        // Si el segundo combatiente fue derrotado,
-        // avanza al siguiente personaje del Ejercito 2.
+        // Si el segundo combatiente fue derrotado,avanza al siguiente personaje del Ejercito 2.
         if (combatiente2->getSalud() <= 0) {
 
             cout << "\n"
@@ -293,8 +288,7 @@ void liberarEjercito(vector<Personaje*>& ejercito) {
 
 int main() {
 
-    // Inicializa los numeros aleatorios utilizados
-    // en los calculos de ataque.
+    // Inicializa los numeros aleatorios utilizados en los calculos de ataque.
     srand(time(nullptr));
 
     // Cada vector representa un ejercito.
@@ -303,13 +297,11 @@ int main() {
 
     try {
 
-        // Carga los integrantes de cada ejercito
-        // desde sus respectivos archivos.
+        // Carga los integrantes de cada ejercito desde sus respectivos archivos.
         cargarEjercito(ejercito1, "ejercito1.txt");
         cargarEjercito(ejercito2, "ejercito2.txt");
 
-        // Muestra los ejercitos antes de comenzar
-        // la simulacion de la batalla.
+        // Muestra los ejercitos antes de comenzar la simulacion de la batalla.
         mostrarEjercito(ejercito1, "EJERCITO 1");
         mostrarEjercito(ejercito2, "EJERCITO 2");
 
