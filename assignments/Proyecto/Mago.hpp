@@ -15,7 +15,7 @@ public:
 
     int calculaAtaque(Personaje& objetivo) override;
 
-    void recibeAtaque(int ptosAtaque);
+    void recibeAtaque(int ptosAtaque) override;
 
     void revive() override;
 
